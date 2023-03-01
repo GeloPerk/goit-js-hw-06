@@ -9,9 +9,8 @@ const ingredients = [
 
 const ulIngredients = document.querySelector('#ingredients');
 
-ingredients.forEach(ingredient => {
-const li = document.createElement('li');
-li.textContent = ingredient;
-li.classList.add('item');
-ulIngredients.append(li);
+const liElements = ingredients.map(ingredient => {
+  return `<li class="item">${ingredient}</li>`;
 });
+
+ulIngredients.innerHTML = liElements.join('');
